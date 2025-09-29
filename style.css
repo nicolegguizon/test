@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 150px;
+  scroll-padding-top: 160px;
 }
 
 body {
@@ -9,6 +9,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
@@ -58,6 +64,7 @@ section {
   margin-bottom: 200px;
   opacity: 0;
   transform: translateY(60px) scale(0.98);
+  filter: blur(4px);
   animation: reveal 1.2s ease-out forwards;
 }
 
@@ -69,6 +76,7 @@ section:nth-of-type(3) { animation-delay: 0.8s; }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
@@ -88,8 +96,8 @@ section:nth-of-type(3) { animation-delay: 0.8s; }
 }
 
 .image:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .member-card {
@@ -105,12 +113,11 @@ section:nth-of-type(3) { animation-delay: 0.8s; }
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transform: translateY(-10px) scale(1.03);
 }
 
 .name {
