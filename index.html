@@ -1,126 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Slider Showcase</title>
+  <meta charset="UTF-8">
+  <title>McDo Group Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-
-    header, footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .slider-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      overflow: hidden;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .video-slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .video-slide {
-      min-width: 100%;
-      box-sizing: border-box;
-      padding: 1rem;
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .nav-buttons {
-      text-align: center;
-      margin: 1rem 0;
-    }
-
-    .nav-buttons button {
-      padding: 0.5rem 1rem;
-      margin: 0 0.5rem;
-      font-size: 1rem;
-      background-color: #222;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .nav-buttons button:hover {
-      background-color: #555;
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🎬 Welcome to My Video Slider</h1>
-    <p>Enjoy these MP4 videos hosted on GitHub</p>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#members">Group Members</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+  </nav>
 
-  <div class="slider-container">
-    <div class="video-slider" id="videoSlider">
-      <div class="video-slide">
-        <video autoplay muted controls>
-          <source src="c:\Users\My PC\Downloads\545073934_24436491036009870_3263254762059159343_n (1).mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="video-slide">
-        <video autoplay muted controls>
-          <source src="c:\Users\My PC\Downloads\544585706_24529802486689245_725739631798615780_n (1).mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="video-slide">
-        <video autoplay muted controls>
-          <source src="c:\Users\My PC\Downloads\545503119_31311856598430025_3194622670404594332_n (1).mp4" type="video/mp4" />
-        </video>
-      </div>
+  <section id="home">
+    <h1 class="title">Welcome to McDo 🍔</h1>
+    <p class="highlight">Lovin' it since day one!</p>
+    <img src="https://pngimg.com/uploads/mcdonalds/mcdonalds_PNG9.png" alt="McDonald's Logo" class="image">
+  </section>
+
+  <section id="members">
+    <h2>Meet the Team</h2>
+    <div class="member-card">
+      <p><span class="name">Alex</span> – Designer</p>
+      <p><span class="name">Jamie</span> – Developer</p>
+      <p><span class="name">Taylor</span> – Content Creator</p>
     </div>
-    <div class="nav-buttons">
-      <button onclick="prevSlide()">⏪ Prev</button>
-      <button onclick="nextSlide()">⏩ Next</button>
-    </div>
-  </div>
+  </section>
 
-  <footer>
-    <h2>👋 Thanks for Watching!</h2>
-    <p>Hosted with ❤️ on GitHub Pages</p>
-  </footer>
-
-  <script>
-    let currentIndex = 0;
-    const slider = document.getElementById('videoSlider');
-    const totalSlides = slider.children.length;
-
-    function updateSlider() {
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider();
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateSlider();
-    }
-  </script>
+  <section id="about">
+    <h2>About Us</h2>
+    <p class="about-text">We’re a group of students passionate about web design and McDonald's. This site is our tribute to the golden arches and crispy fries!</p>
+  </section>
 
 </body>
 </html>
