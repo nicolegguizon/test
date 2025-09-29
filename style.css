@@ -1,10 +1,10 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 140px;
+  scroll-padding-top: 150px;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #fff8f0, #ffe5d9);
   margin: 0;
   padding: 0;
@@ -54,58 +54,63 @@ nav ul li a:hover::after {
 }
 
 section {
-  padding: 80px 40px;
+  padding: 100px 40px;
   margin-bottom: 200px;
   opacity: 0;
-  transform: translateY(50px);
-  animation: fadeSlide 1s ease-out forwards;
+  transform: translateY(60px) scale(0.98);
+  animation: reveal 1.2s ease-out forwards;
 }
 
 section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.4s; }
-section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(2) { animation-delay: 0.5s; }
+section:nth-of-type(3) { animation-delay: 0.8s; }
 
-@keyframes fadeSlide {
+@keyframes reveal {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .title {
   text-align: center;
-  font-size: 2.8em;
+  font-size: 3em;
   color: #d00000;
   text-shadow: 2px 2px #ffcc00;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .image {
   display: block;
   margin: 30px auto;
   width: 220px;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .image:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .member-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   font-style: italic;
   color: rgb(80, 80, 80);
   font-size: 1.1em;
   line-height: 1.8em;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .name {
@@ -119,4 +124,8 @@ section:nth-of-type(3) { animation-delay: 0.6s; }
   color: #333;
   text-decoration: underline;
   line-height: 1.6em;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
