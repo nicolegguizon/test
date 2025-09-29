@@ -1,10 +1,11 @@
 html {
-  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #fff8f0;
+  background: linear-gradient(to bottom, #fff8f0, #ffe5d9);
   margin: 0;
   padding: 0;
 }
@@ -14,17 +15,48 @@ nav ul {
   justify-content: center;
   background-color: #ffcc00;
   list-style: none;
-  padding: 10px;
+  padding: 15px;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #d00000;
   font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #900000;
+}
+
+section {
+  padding: 80px 40px;
+  margin-bottom: 150px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+section:nth-child(3) {
+  animation-delay: 0.4s;
+}
+section:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .title {
@@ -36,7 +68,7 @@ nav ul li a {
 
 .image {
   display: block;
-  margin: 20px auto;
+  margin: 30px auto;
   width: 200px;
 }
 
@@ -44,6 +76,7 @@ nav ul li a {
   text-align: center;
   font-style: italic;
   color: rgb(80, 80, 80);
+  font-size: 1.1em;
 }
 
 .name {
@@ -56,9 +89,4 @@ nav ul li a {
   font-size: 1.2em;
   color: #333;
   text-decoration: underline;
-}
-
-#home, #members, #about {
-  padding: 60px 40px;
-  margin-bottom: 120px;
 }
